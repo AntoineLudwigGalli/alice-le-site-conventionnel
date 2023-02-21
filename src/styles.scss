@@ -2,3 +2,28 @@
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+
+
+.navbar-toggler{
+    height: 10vh;
+}
+
+.navbar-toggler img{
+    height: 7vh;
+    width: 7vw;
+}
+
+.reversed-mini-logo{
+    transform: scaleX(-1);
+}
+
+@media screen and (min-width: 768px) {
+    .navbar-toggler{
+        height: 12vh;
+    }
+    .navbar-toggler img{
+        width: 4vw;
+        margin-right: 8%;
+        margin-left: 2%;
+    }
+}
