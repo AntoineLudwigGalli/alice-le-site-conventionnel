@@ -8,4 +8,17 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'alice-le-site';
 
+  windowScrolled = false;
+
+
+  ngOnInit() {
+    window.addEventListener('scroll', () => {
+      this.windowScrolled = window.pageYOffset !== 0;
+    });
+  }
+
+  scrollToTop(): void {
+    window.scrollTo(0, 0);
+  }
+
 }
