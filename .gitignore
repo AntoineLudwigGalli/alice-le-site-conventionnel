@@ -43,6 +43,7 @@ Thumbs.db
 
 # Custom
 src/assets/images/*
+src/assets/videos/*
 !src/assets/images/.gitignore
 src/assets/videos/*
 !src/assets/videos/.gitignore
