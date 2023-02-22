@@ -44,5 +44,7 @@ Thumbs.db
 # Custom
 src/assets/images/*
 !src/assets/images/.gitignore
+src/assets/videos/*
+!src/assets/videos/.gitignore
 src/environments/*
 !src/environments/.gitignore
