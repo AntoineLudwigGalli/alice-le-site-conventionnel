@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LogoDisplayService } from '../logo-display-service';
 
 @Component({
   selector: 'app-new-creations-section',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./new-creations-section.component.scss']
 })
 export class NewCreationsSectionComponent {
+  constructor(private readonly _serv: LogoDisplayService) {}
+
+  ngOnInit() {
+    this._serv.logo = "assets/images/logo.png";
+  }
 
 }

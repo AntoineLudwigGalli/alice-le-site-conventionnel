@@ -12,6 +12,8 @@ import { NewCreationsSectionComponent } from './new-creations-section/new-creati
 import { NewContactComponent } from './new-contact/new-contact.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -24,6 +26,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NewCreationsSectionComponent,
     NewContactComponent,
     NotFoundComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

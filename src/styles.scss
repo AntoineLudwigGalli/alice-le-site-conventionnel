@@ -11,48 +11,24 @@
 }
 
 body{
-    border: #1a384d solid 1px;
+    border: #1a384d solid 5px;
     margin: 10px;
+    border-radius: 10px;
+    color: #1a384d;
 }
 
 // To top button
 
 .to-top {
-    bottom: 1rem;
+    bottom: 3rem;
     cursor: pointer;
     margin: 0 8px 12px 0;
     position: fixed;
-    right: 1rem;
+    right: 5rem;
     opacity: 0;
 }
 
 .show-scrollTop {
     opacity: 1;
     transition: all 0.2s ease-in-out;
-}
-
-// Header
-.navbar-toggler{
-    height: 10vh;
-}
-
-.navbar-toggler img{
-    height: 7vh;
-    width: 7vw;
-}
-
-.reversed-mini-logo{
-    transform: scaleX(-1);
-}
-
-@media screen and (min-width: 768px) {
-    // Header
-    .navbar-toggler{
-        height: 12vh;
-    }
-    .navbar-toggler img{
-        width: 4vw;
-        margin-right: 8%;
-        margin-left: 2%;
-    }
 }

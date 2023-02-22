@@ -1,5 +1,12 @@
 
+<div class="container-fluid p-0">
+<app-header></app-header>
 <router-outlet></router-outlet>
+<app-footer></app-footer>
+
+
+
+</div>
 
   <div class="to-top d-none d-md-block" (click)="scrollToTop()" [ngClass]="{ 'show-scrollTop': windowScrolled }">
     <img src="../assets/images/to_top.png" alt="to-top-icon" />

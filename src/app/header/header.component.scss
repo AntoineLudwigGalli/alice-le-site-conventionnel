@@ -1,0 +1,31 @@
+// Header
+.navbar-toggler{
+    height: 10vh;
+    border: #1a384d 1px solid;
+    box-shadow: 6px 5px 10px -2px rgba(0,0,0,0.75);
+        -webkit-box-shadow: 6px 5px 10px -2px rgba(0,0,0,0.75);
+        -moz-box-shadow: 6px 5px 10px -2px rgba(0,0,0,0.75);
+}
+
+.navbar-toggler img{
+    height: 7vh;
+    width: 7vw;
+}
+
+.reversed-mini-logo{
+    transform: scaleX(-1);
+}
+
+
+
+@media screen and (min-width: 768px) {
+    // Header
+    .navbar-toggler{
+        height: 12vh;
+    }
+    .navbar-toggler img{
+        width: 4vw;
+        margin-right: 8%;
+        margin-left: 2%;
+    }
+}
