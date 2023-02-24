@@ -20,11 +20,13 @@ export class NewContactComponent {
 
   
   this.contactForm = this.formBuilder.group({
-    firstname: ['', [Validators.required, Validators.minLength(10)]],
-    lastname: ['', [Validators.required, Validators.maxLength(15), Validators.pattern("^[a-zA-Z]+$")]],
-    email: ['', [Validators.required, Validators.minLength(10)]],
-    phoneNumber: ['', [Validators.required, Validators.minLength(10)]],
-    content: ['', [Validators.required, Validators.minLength(10)]],
+    firstname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50), Validators.pattern("^[a-zA-Z]+$")]],
+    lastname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50), Validators.pattern("^[a-zA-Z]+$")]],
+    email: ['', [Validators.required, Validators.email]],
+    phoneNumber: ['', [Validators.pattern("(0|\\+33|0033)[1-9][0-9]{8}")]],
+    content: ['', [Validators.required, Validators.minLength(10), ]],
+    access_key: ['b9000ad6-3f66-4d48-9012-3ca358c8a238'],
+    subject: ['Un nouveau message est arrivé pour A.L.I.C.E.'],
   })
 }
 get firstname() {
@@ -42,6 +44,13 @@ get phoneNumber() {
 get content() {
   return this.contactForm?.get('content');
 }
+get access_key() {
+  return this.contactForm?.get('access_key');
+}
+get subject() {
+  return this.contactForm?.get('subject');
+}
+
 
 onSubmit(contactForm: any)
 {

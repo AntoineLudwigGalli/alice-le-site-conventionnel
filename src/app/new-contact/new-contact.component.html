@@ -1,79 +1,103 @@
 <form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm.value)">
+    <!-- Paramètres pour l'API qui envoie le formulaire par mail -->
+    <input type="hidden" name="access_key" value="">
+    <input type="hidden" name="subject" value="">
 
+    
+    <!-- Champs nom -->
+    <div>
+        <label for="lastname">Nom</label>
+        <input type="text" id="lastname" name="lastname" formControlName="lastname">
+        
+        <div *ngIf="lastname?.invalid && (lastname?.dirty || lastname?.touched)"
+        class="text-danger mt-0 mb-3">
+            <div *ngIf="lastname?.errors?.['required']">
+                Merci de saisir votre nom.
+            </div>
+            <div *ngIf="lastname?.errors?.['minlength']">
+                Votre prénom doit contenir au moins 2 lettres.
+            </div>
+            <div *ngIf="lastname?.errors?.['maxLength']">
+                Votre nom doit contenir au maximum 50 lettres.
+            </div>
+            <div *ngIf="lastname?.errors?.['pattern']">
+                Votre nom ne doit contenir que des lettres.
+            </div>
+        </div>
+    </div>
 
-    <p>
-        <label for="firstname">First Name </label>
+    <!-- Champs prénom -->
+    <div>
+        <label for="firstname">Prénom</label>
         <input type="text" id="firstname" name="firstname" formControlName="firstname" required>
-    </p>
-    <div *ngIf="firstname?.invalid && (firstname?.dirty || firstname?.touched)"
-    class="alert alert-danger">
-        <div *ngIf="firstname?.errors?.['required']">
-        Name is required.
-        </div>
-        <div *ngIf="firstname?.errors?.['minlength']">
-        Name must be at least 4 characters long.
-        </div>
-    </div>
 
-    <p>
-      <label for="lastname">Last Name </label>
-      <input type="text" id="lastname" name="lastname" formControlName="lastname">
-    </p>
-    <div *ngIf="lastname?.invalid && (lastname?.dirty || lastname?.touched)"
-    class="alert alert-danger">
-        <div *ngIf="lastname?.errors?.['required']">
-        Name is required.
-        </div>
-        <div *ngIf="lastname?.errors?.['minlength']">
-        Name must be at least 4 characters long.
+        <div *ngIf="firstname?.invalid && (firstname?.dirty || firstname?.touched)"
+        class="text-danger mt-0 mb-3">
+            <div *ngIf="firstname?.errors?.['required']">
+            Merci de saisir votre prénom.
+            </div>
+            <div *ngIf="firstname?.errors?.['minlength']">
+            Votre prénom doit contenir au moins 2 lettres.
+            </div>
+            <div *ngIf="firstname?.errors?.['maxLength']">
+                Votre prénom doit contenir au maximum 50 lettres.
+            </div>
+            <div *ngIf="firstname?.errors?.['pattern']">
+                Votre prénom ne doit contenir que des lettres.
+            </div>
         </div>
     </div>
-   
-    <p>
+<!-- Champs Email -->
+    <div>
       <label for="email">Email </label>
-      <input type="text" id="email" name="email" formControlName="email">
-    </p>
-    <div *ngIf="email?.invalid && (email?.dirty || email?.touched)"
-    class="alert alert-danger">
+      <input type="email" id="email" name="email" formControlName="email">
+
+        <div *ngIf="email?.invalid && (email?.dirty || email?.touched)"
+        class="text-danger mt-0 mb-3">
         <div *ngIf="email?.errors?.['required']">
-        Name is required.
-        </div>
-        <div *ngIf="email?.errors?.['minlength']">
-        Name must be at least 4 characters long.
+            Merci de saisir votre adresse mail.
+            </div>
+            <div *ngIf="email?.errors?.['email']">
+            Merci de saisir une adresse mail valide.
+            </div>
         </div>
     </div>
 
-    <p>
-        <label for="phoneNumber">Numéro de téléphone </label>
+    <!-- Champs Téléphone -->
+    <div>
+        <label for="phoneNumber">Numéro de téléphone <sup>* </sup> </label>
         <input type="text" id="phoneNumber" name="phoneNumber" formControlName="phoneNumber">
-    </p>
+    
         <div *ngIf="phoneNumber?.invalid && (phoneNumber?.dirty || phoneNumber?.touched)"
-    class="alert alert-danger">
-        <div *ngIf="phoneNumber?.errors?.['required']">
-        Name is required.
-        </div>
-        <div *ngIf="phoneNumber?.errors?.['minlength']">
-        Name must be at least 4 characters long.
+    class="text-danger mt-0 mb-3">
+            <div *ngIf="phoneNumber?.errors?.['pattern']">
+            Merci de saisir un numéro de téléphone français sans point ni espace. Si vous avez un numéro étranger, merci de l'indiquer dans le corps du message.
+            </div>
         </div>
     </div>
-   
-    <p>
+
+    <!-- Champs content -->
+    <div>
         <label for="content">Expliquez moi ce que je peux faire pour vous </label>
         <textarea id="content" name="content" rows="5" cols="50" formControlName="content"></textarea>
-    </p>
+    
         <div *ngIf="content?.invalid && (content?.dirty || content?.touched)"
-    class="alert alert-danger">
-        <div *ngIf="content?.errors?.['required']">
-        Name is required.
-        </div>
-        <div *ngIf="content?.errors?.['minlength']">
-        Name must be at least 4 characters long.
+    class="text-danger mt-0 mb-3">
+            <div *ngIf="content?.errors?.['required']">
+            Merci de saisir un contenu à votre message
+            </div>
+            <div *ngIf="content?.errors?.['minlength']">
+            Le contenu doit contenir au moins 10 caractères.
+            </div>
         </div>
     </div>
 
-
-    <p>
+    <div>
         <button type="submit" [disabled]="!contactForm?.valid">Submit</button>
-    </p>
+    </div>
    
   </form>
+
+  <div>
+    <span>* Champs facultatifs</span>
+  </div>

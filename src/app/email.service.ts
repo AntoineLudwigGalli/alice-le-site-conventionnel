@@ -2,15 +2,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { ContactModel } from './contact-model';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmailService {
-//mettre l'adresse mail à la place du code (ex:https://formsubmit.co/alice.webdeveloppement@gmail.com) et ensuite remplacer par le code envoyé par mails
-  private url = "https://formsubmit.co/eb67e3234bf1d373ec350a2ef35c530b";
+
+  private url = "https://api.web3forms.com/submit";
   
   constructor(private http: HttpClient)  {}
 
