@@ -1,1 +1,79 @@
-<p>new-contact works!</p>
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm.value)">
+
+
+    <p>
+        <label for="firstname">First Name </label>
+        <input type="text" id="firstname" name="firstname" formControlName="firstname" required>
+    </p>
+    <div *ngIf="firstname?.invalid && (firstname?.dirty || firstname?.touched)"
+    class="alert alert-danger">
+        <div *ngIf="firstname?.errors?.['required']">
+        Name is required.
+        </div>
+        <div *ngIf="firstname?.errors?.['minlength']">
+        Name must be at least 4 characters long.
+        </div>
+    </div>
+
+    <p>
+      <label for="lastname">Last Name </label>
+      <input type="text" id="lastname" name="lastname" formControlName="lastname">
+    </p>
+    <div *ngIf="lastname?.invalid && (lastname?.dirty || lastname?.touched)"
+    class="alert alert-danger">
+        <div *ngIf="lastname?.errors?.['required']">
+        Name is required.
+        </div>
+        <div *ngIf="lastname?.errors?.['minlength']">
+        Name must be at least 4 characters long.
+        </div>
+    </div>
+   
+    <p>
+      <label for="email">Email </label>
+      <input type="text" id="email" name="email" formControlName="email">
+    </p>
+    <div *ngIf="email?.invalid && (email?.dirty || email?.touched)"
+    class="alert alert-danger">
+        <div *ngIf="email?.errors?.['required']">
+        Name is required.
+        </div>
+        <div *ngIf="email?.errors?.['minlength']">
+        Name must be at least 4 characters long.
+        </div>
+    </div>
+
+    <p>
+        <label for="phoneNumber">Numéro de téléphone </label>
+        <input type="text" id="phoneNumber" name="phoneNumber" formControlName="phoneNumber">
+    </p>
+        <div *ngIf="phoneNumber?.invalid && (phoneNumber?.dirty || phoneNumber?.touched)"
+    class="alert alert-danger">
+        <div *ngIf="phoneNumber?.errors?.['required']">
+        Name is required.
+        </div>
+        <div *ngIf="phoneNumber?.errors?.['minlength']">
+        Name must be at least 4 characters long.
+        </div>
+    </div>
+   
+    <p>
+        <label for="content">Expliquez moi ce que je peux faire pour vous </label>
+        <textarea id="content" name="content" rows="5" cols="50" formControlName="content"></textarea>
+    </p>
+        <div *ngIf="content?.invalid && (content?.dirty || content?.touched)"
+    class="alert alert-danger">
+        <div *ngIf="content?.errors?.['required']">
+        Name is required.
+        </div>
+        <div *ngIf="content?.errors?.['minlength']">
+        Name must be at least 4 characters long.
+        </div>
+    </div>
+
+
+    <p>
+        <button type="submit" [disabled]="!contactForm?.valid">Submit</button>
+    </p>
+   
+  </form>
