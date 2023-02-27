@@ -1,12 +1,19 @@
-<form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm.value)">
+<div class="row my-4">
+    <h2 class="text-center col-12 text-lg-start col-lg-6 offset-lg-2">Assez parlé de moi.</h2>
+    <h2 class="text-center col-12 text-lg-start col-lg-4 offset-lg-3">Maintenant parlez moi de <em class="underline-blue">vous</em> ! </h2>
+    <h1 class="col-12 text-center mt-4 ">En quoi puis-je <em class="title">vous</em> aider ?</h1>
+</div>
+
+
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm.value)" class="row">
     <!-- Paramètres pour l'API qui envoie le formulaire par mail -->
     <input type="hidden" name="access_key" value="">
     <input type="hidden" name="subject" value="">
 
     
     <!-- Champs nom -->
-    <div>
-        <label for="lastname">Nom</label>
+    <div class='d-flex flex-column col-10 offset-1 mb-3 col-md-8 offset-md-2 col-lg-4'>
+        <label for="lastname">Votre nom</label>
         <input type="text" id="lastname" name="lastname" formControlName="lastname">
         
         <div *ngIf="lastname?.invalid && (lastname?.dirty || lastname?.touched)"
@@ -17,7 +24,7 @@
             <div *ngIf="lastname?.errors?.['minlength']">
                 Votre prénom doit contenir au moins 2 lettres.
             </div>
-            <div *ngIf="lastname?.errors?.['maxLength']">
+            <div *ngIf="lastname?.errors?.['maxlength']">
                 Votre nom doit contenir au maximum 50 lettres.
             </div>
             <div *ngIf="lastname?.errors?.['pattern']">
@@ -27,8 +34,8 @@
     </div>
 
     <!-- Champs prénom -->
-    <div>
-        <label for="firstname">Prénom</label>
+    <div class='d-flex flex-column col-10 offset-1 mb-3 col-md-8 offset-md-2 col-lg-4 offset-lg-0'>
+        <label for="firstname">Votre prénom</label>
         <input type="text" id="firstname" name="firstname" formControlName="firstname" required>
 
         <div *ngIf="firstname?.invalid && (firstname?.dirty || firstname?.touched)"
@@ -39,7 +46,7 @@
             <div *ngIf="firstname?.errors?.['minlength']">
             Votre prénom doit contenir au moins 2 lettres.
             </div>
-            <div *ngIf="firstname?.errors?.['maxLength']">
+            <div *ngIf="firstname?.errors?.['maxlength']">
                 Votre prénom doit contenir au maximum 50 lettres.
             </div>
             <div *ngIf="firstname?.errors?.['pattern']">
@@ -48,8 +55,8 @@
         </div>
     </div>
 <!-- Champs Email -->
-    <div>
-      <label for="email">Email </label>
+    <div class='d-flex flex-column col-10 offset-1 mb-3 col-md-8 offset-md-2 col-lg-4'>
+      <label for="email">Votre adresse mail </label>
       <input type="email" id="email" name="email" formControlName="email">
 
         <div *ngIf="email?.invalid && (email?.dirty || email?.touched)"
@@ -64,8 +71,8 @@
     </div>
 
     <!-- Champs Téléphone -->
-    <div>
-        <label for="phoneNumber">Numéro de téléphone <sup>* </sup> </label>
+    <div class='d-flex flex-column col-10 offset-1 mb-3 col-md-8 offset-md-2 col-lg-4 offset-lg-0'>
+        <label for="phoneNumber">Votre numéro de téléphone <sup>* </sup> </label>
         <input type="text" id="phoneNumber" name="phoneNumber" formControlName="phoneNumber">
     
         <div *ngIf="phoneNumber?.invalid && (phoneNumber?.dirty || phoneNumber?.touched)"
@@ -77,8 +84,8 @@
     </div>
 
     <!-- Champs content -->
-    <div>
-        <label for="content">Expliquez moi ce que je peux faire pour vous </label>
+    <div class='d-flex flex-column col-10 offset-1 mb-3 col-md-8 offset-md-2'>
+        <label for="content">Expliquez-moi ce que je peux faire pour vous: </label>
         <textarea id="content" name="content" rows="5" cols="50" formControlName="content"></textarea>
     
         <div *ngIf="content?.invalid && (content?.dirty || content?.touched)"
@@ -89,15 +96,19 @@
             <div *ngIf="content?.errors?.['minlength']">
             Le contenu doit contenir au moins 10 caractères.
             </div>
+            <div *ngIf="content?.errors?.['maxlength']">
+                Le contenu doit contenir moins de 5000 caractères.
+            </div>
         </div>
     </div>
 
     <div>
-        <button type="submit" [disabled]="!contactForm?.valid">Submit</button>
+        <button type="submit" [disabled]="!contactForm.valid" class="btn submit-btn col-10 offset-1 col-md-8 offset-md-2">Envoyer</button>
     </div>
    
   </form>
 
-  <div>
+  <div class="text-end me-3 mt-5">
     <span>* Champs facultatifs</span>
   </div>
+

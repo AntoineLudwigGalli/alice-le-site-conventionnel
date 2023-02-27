@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { EmailService } from '../email.service';
-
+import { LogoDisplayService } from '../logo-display-service';
 
 
 @Component({
@@ -12,11 +12,12 @@ import { EmailService } from '../email.service';
 })
 export class NewContactComponent {
 
+
   contactForm!: FormGroup;
 
   
 
-  constructor(private formBuilder: FormBuilder, private contact : EmailService) {
+  constructor(private formBuilder: FormBuilder, private contact : EmailService, private readonly _serv: LogoDisplayService) {
 
   
   this.contactForm = this.formBuilder.group({
@@ -24,7 +25,7 @@ export class NewContactComponent {
     lastname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50), Validators.pattern("^[a-zA-Z]+$")]],
     email: ['', [Validators.required, Validators.email]],
     phoneNumber: ['', [Validators.pattern("(0|\\+33|0033)[1-9][0-9]{8}")]],
-    content: ['', [Validators.required, Validators.minLength(10), ]],
+    content: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(5000)]],
     access_key: ['b9000ad6-3f66-4d48-9012-3ca358c8a238'],
     subject: ['Un nouveau message est arrivé pour A.L.I.C.E.'],
   })
@@ -66,4 +67,8 @@ onSubmit(contactForm: any)
     })
 }
 
+
+ngOnInit() {
+  this._serv.logo = "assets/images/logo.png";
+}
 }

@@ -17,6 +17,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { EmailService } from './email.service';
+import { LegalMentionsComponent } from './legal-mentions/legal-mentions.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { EmailService } from './email.service';
     NotFoundComponent,
     HeaderComponent,
     FooterComponent,
+    LegalMentionsComponent,
   ],
   imports: [
     BrowserModule,

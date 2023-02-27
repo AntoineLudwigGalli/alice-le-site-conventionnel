@@ -1,5 +1,61 @@
 // Main footer
 #main-footer{
-    min-height: 20vh;
+    padding: 1rem;
     background-color: #1a384d;
+}
+
+.contact-info{
+    color: white;
+}
+
+.contact-info a{
+    text-decoration: none;
+    color: white;
+    font-style: italic;
+}
+
+h3{
+    font-size: 1.3rem;
+}
+
+h4{
+    font-size: 1rem;
+    margin: 0;
+}
+
+.contact-info p, .contact-info a{
+    font-size: .8rem;
+    padding: 0;
+    margin: 0;
+}
+
+ul li{
+    list-style-type: none;
+    margin: 0 1rem;
+    padding: 0;
+}
+.social-icons{
+    margin: 0;
+    padding: 1rem 0;
+    
+}
+
+.social-icons li{
+    width: 15%;
+}
+
+.social-icons li img{
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .social-icons li{
+        width: 8%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .social-icons li{
+        width: 3%;
+    }
 }
