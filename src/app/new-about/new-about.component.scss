@@ -1,5 +1,3 @@
-
-
 h1{
     color: #1a384d;
     font-weight: bold;
@@ -8,8 +6,39 @@ h1{
 
 h2{
     text-decoration: #4d9fbd underline 5px;
+
 }
+
+
 
 p{
     text-align: justify;
+    font-size: 1rem;
+
 }
+#aboutme p{
+    color:#ffffffd3 ;
+} 
+
+#aboutme{
+    background-color: #1a384d;
+    color: white;
+}
+
+strong{
+    font-weight: bolder;
+    color: white;
+}
+
+@media screen and (min-width: 768px) {
+    p{
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #aboutme{
+        margin: 0;
+    }
+}
+

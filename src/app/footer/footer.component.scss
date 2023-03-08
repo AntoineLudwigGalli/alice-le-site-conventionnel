@@ -41,21 +41,20 @@ ul li{
 }
 
 .social-icons li{
-    width: 15%;
-}
-
-.social-icons li img{
-    width: 100%;
+    font-size: 1.5rem;
+    margin: 0 1.5rem;
 }
 
 @media screen and (min-width: 768px) {
     .social-icons li{
-        width: 8%;
+        font-size: 2rem;
+        margin: 0 1.5rem;
     }
 }
 
 @media screen and (min-width: 992px) {
     .social-icons li{
-        width: 3%;
+        font-size: 2.5rem;
+        margin: 0 1.5rem;
     }
 }

@@ -6,8 +6,47 @@ h1{
 
 h2{
     text-decoration: #4d9fbd underline 5px;
+
 }
+
+
 
 p{
     text-align: justify;
+    font-size: 1rem;
+
 }
+#courses p{
+    color:#ffffffd3 ;
+} 
+
+#courses{
+    background-color: #1a384d;
+    color: white;
+}
+
+strong{
+    font-weight: bolder;
+    color: white;
+}
+
+@media screen and (min-width: 768px) {
+    p{
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #courses{
+        margin: 0;
+    }
+
+    #collective-courses h2{
+        padding-left: 2.9rem;
+    }
+    
+    #assistance h2{
+        padding-left: .4rem;
+    }
+}
+

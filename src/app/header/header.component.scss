@@ -5,6 +5,12 @@
     box-shadow: 6px 5px 10px -2px rgba(0,0,0,0.75);
         -webkit-box-shadow: 6px 5px 10px -2px rgba(0,0,0,0.75);
         -moz-box-shadow: 6px 5px 10px -2px rgba(0,0,0,0.75);
+    background-color:#1a384d;
+    color: white;
+}
+
+.dropdown-menu li a{
+    color: #1a384d;
 }
 
 .navbar-toggler img{
@@ -18,14 +24,42 @@
 
 
 
+
+
 @media screen and (min-width: 768px) {
     // Header
     .navbar-toggler{
-        height: 12vh;
+        height: 8vh;
+     
     }
     .navbar-toggler img{
         width: 4vw;
         margin-right: 8%;
         margin-left: 2%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .navbar{
+        background-color:#1a384d;
+        padding: 1.5rem ;
+        margin: 0 15% 2rem 15%;
+        border-radius: 15px;
+    }
+    
+    li a{
+        color: white;
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+    }
+
+    li a.dropdown-item:hover{
+    background-color: #4c9fbd49;
+    color:#1a384d;
+    font-weight: bold;
+    }
+
+    .nav-item.dropdown .nav-link{
+        margin: 0 1rem;
     }
 }
