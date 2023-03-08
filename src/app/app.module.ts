@@ -20,6 +20,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { EmailService } from './email.service';
 import { LegalMentionsComponent } from './legal-mentions/legal-mentions.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { environment } from 'src/environments/environment.prod';
+import { AngularFireModule} from '@angular/fire/compat';
+import { AngularFireAnalyticsModule } from "@angular/fire/compat/analytics"
 
 
 @NgModule({
@@ -42,7 +45,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     NgbModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAnalyticsModule,
   ],
   providers: [
    EmailService
