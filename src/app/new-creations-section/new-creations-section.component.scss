@@ -2,3 +2,32 @@ img{
     border-radius: 10px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
+
+mark{
+    background-color: rgba(255, 255, 255, 0);
+    text-decoration: #4d9fbd underline 5px;
+}
+@media screen and (min-width: 768px) {
+    mark{
+        background-color: #4d9fbd;
+        color: white;
+        border-radius: 10px;
+        font-style: normal;
+        font-weight: bold;
+    }
+    
+    a{
+        text-decoration: none;
+    }
+}
+
+@media screen and (min-width: 992px) {
+
+    
+    mark:hover{
+        font-style: italic;
+        background-color: rgba(255, 255, 255, 0);
+        color: #4d9fbd;
+        border: 2px solid #4d9fbd;
+    }
+}

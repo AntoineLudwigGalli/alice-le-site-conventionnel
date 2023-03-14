@@ -22,7 +22,8 @@ import { LegalMentionsComponent } from './legal-mentions/legal-mentions.componen
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { environment } from 'src/environments/environment.prod';
 import { AngularFireModule} from '@angular/fire/compat';
-import { AngularFireAnalyticsModule } from "@angular/fire/compat/analytics"
+import { AngularFireAnalyticsModule } from "@angular/fire/compat/analytics";
+import { AngularFirePerformanceModule, PerformanceMonitoringService } from '@angular/fire/compat/performance';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { AngularFireAnalyticsModule } from "@angular/fire/compat/analytics"
     HeaderComponent,
     FooterComponent,
     LegalMentionsComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -48,9 +50,11 @@ import { AngularFireAnalyticsModule } from "@angular/fire/compat/analytics"
     FontAwesomeModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAnalyticsModule,
+    AngularFirePerformanceModule,
   ],
   providers: [
-   EmailService
+   EmailService,
+   PerformanceMonitoringService
   ],
   bootstrap: [AppComponent]
 })

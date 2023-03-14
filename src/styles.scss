@@ -4,10 +4,11 @@
 @import 'bootstrap/scss/bootstrap';
 
 // Fonts
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Lao:wght@300;400&family=Roboto&display=swap');
+ 
 
 *{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Noto Serif Lao', serif;
 }
 
 body{
